@@ -13,7 +13,7 @@ const Exchange = () => {
 
   useEffect(() => {
     setExchanges(exchangesData.exchanges)
-    if (exchanges && myExchange) {
+    if (exchanges && myExchange.pokemon) {
       const match = exchanges.find((exchange) => {
         return myExchange.pokemon.pokemonId === exchange.wantedPokemon.pokemonId
       })
@@ -26,6 +26,7 @@ const Exchange = () => {
 
   useEffect(() => {
     setMyExchange(myExchangeData.exchange)
+    console.log(myExchange)
     return () => {
       setMyExchange(null)
     }
@@ -39,12 +40,17 @@ const Exchange = () => {
   return (
     <div className='container mt-5 mb-5'>
       <h2>Your Exchange</h2>
-      {myExchange && (
-        <div className='card p-3'>
-          <strong>kamu</strong> ingin menukar '{myExchange.pokemon.name}' dengan
-          '{myExchange.wantedPokemon.name}'
-        </div>
-      )}
+      {myExchange &&
+        // check whether object is empty or not
+        !(
+          Object.keys(myExchange).length === 0 &&
+          myExchange.constructor === Object
+        ) && (
+          <div className='card p-3'>
+            <strong>kamu</strong> ingin menukar '{myExchange.pokemon?.name}'
+            dengan '{myExchange.wantedPokemon?.name}'
+          </div>
+        )}
       <h2 className='mt-5'>Match Exchanges</h2>
       {matchExchange && (
         <>
