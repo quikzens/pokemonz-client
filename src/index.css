@@ -16,3 +16,16 @@ body {
   color: var(--black);
   line-height: 1.4;
 }
+
+/*------------------------------------*\
+    #UTILITIES
+\*------------------------------------*/
+
+.btn-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  color: white;
+}

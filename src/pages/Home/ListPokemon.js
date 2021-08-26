@@ -14,10 +14,13 @@ const ListPokemon = () => {
   }, [pokemonsData])
 
   return (
-    <div className='mt-5'>
+    <div
+      className='my-5'
+      style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}
+    >
       {pokemons &&
         pokemons.map((pokemon, index) => (
-          <div className='card' style={{ width: '18rem' }} key={index}>
+          <div className='card' style={{ width: '15rem' }} key={index}>
             <img src={pokemon.image} className='card-img-top' alt='' />
             <div className='card-body'>
               <h5 className='card-title'>{pokemon.name}</h5>

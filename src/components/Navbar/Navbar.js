@@ -51,13 +51,23 @@ const Navbar = () => {
           </div>
         )}
         {user.token && (
-          <div>
-            {user.username && <p>{user.username}</p>}
-            <button className='btn btn-outline-success me-3'>
-              <Link to='/mypokemon'>My Pokemon</Link>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1rem',
+            }}
+          >
+            {user.username && <p className='mb-0'>{user.username}</p>}
+            <button className='btn btn-outline-success'>
+              <Link to='/mypokemon' className='btn-link'>
+                My Pokemon
+              </Link>
             </button>
-            <button className='btn btn-outline-success me-3'>
-              <Link to='/exchange'>Exchange</Link>
+            <button className='btn btn-outline-success'>
+              <Link to='/exchange' className='btn-link'>
+                Exchange
+              </Link>
             </button>
             <button className='btn btn-outline-success' onClick={logout}>
               Logout
