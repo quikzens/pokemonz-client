@@ -7,6 +7,7 @@ import Home from './pages/Home/Home'
 import DetailPokemon from './pages/DetailPokemon/DetailPokemon'
 import MyPokemon from './pages/MyPokemon/MyPokemon'
 import Exchange from './pages/Exchange/Exchange'
+import PrivateRoute from './routes/PrivateRoute'
 
 const App = () => {
   return (
@@ -16,8 +17,8 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/pokemon/:id' component={DetailPokemon} />
-          <Route path='/mypokemon' component={MyPokemon} />
-          <Route path='/exchange' component={Exchange} />
+          <PrivateRoute path='/mypokemon' component={MyPokemon} />
+          <PrivateRoute path='/exchange' component={Exchange} />
         </Switch>
       </Router>
     </UserProvider>
