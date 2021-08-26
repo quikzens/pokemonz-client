@@ -1,0 +1,54 @@
+.form {
+  margin-top: 2rem;
+}
+
+.form-item {
+  position: relative;
+}
+
+.form-item input,
+.form-item textarea {
+  padding: 0.75rem;
+  width: 100%;
+  background-color: var(--brown-25);
+  color: var(--brown-400);
+  border: 2px solid var(--brown-400);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-size: 17px;
+}
+
+.form-item input::placeholder {
+  color: var(--brown-80);
+  font-size: 17px;
+}
+
+.form-item-image {
+  border: 2px solid var(--brown-400);
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem;
+  gap: 1rem;
+  color: var(--brown-80);
+  background-color: var(--brown-25);
+  font-size: 17px;
+}
+
+.form-item-image img {
+  margin-left: auto;
+  display: inline-block;
+}
+
+.input-image {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.form-submit {
+  margin-top: 1.5rem;
+}
